@@ -58,7 +58,7 @@ class AdminController extends Controller
     {
         $task = Task::where('id',$id)->where('delete_task',0)->first();
         if(!empty($task)){
-            $users = User::all()->except(Auth::id());
+            $users = User::get();
         
             if($task->status == 1){
                 $text_color = "text-info";

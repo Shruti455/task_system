@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/create_task', [HomeController::class, 'create_task'])->name('create_task');
     Route::get('/delete_task/{id}', [HomeController::class, 'delete_task'])->name('delete_task');
     Route::post('/update_task/{id}', [HomeController::class, 'update_task'])->name('update_task');
+    Route::get('/user-logout', [HomeController::class, 'logout_user'])->name('logout_user');
 
     Route::get('/task-details/{id}', [HomeController::class, 'task_details'])->name('task_details');
     Route::post('/status/{id}', [HomeController::class, 'status'])->name('status');

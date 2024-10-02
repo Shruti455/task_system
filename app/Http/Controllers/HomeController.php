@@ -62,6 +62,12 @@ class HomeController extends Controller
         }
     }
 
+    public function logout_user()
+    {
+        Auth::guard('web')->logout();
+        return redirect('/login');
+    }
+
     function status(Request $request, $id)
     {
         $data = $request->except('_token');

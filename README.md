@@ -1,5 +1,5 @@
 # Task Management System
-This is a simple task management system built using Laravel. It allows users to create tasks, assign them to specific users, update task statuses, and add comments with the option to upload files.
+This is a simple task management system built using Laravel. It allows the admin to create tasks, assign them to specific users, and update task status.
 
 ### Requirements
 1. User Management:
@@ -10,21 +10,24 @@ This is a simple task management system built using Laravel. It allows users to 
 * Database structure to store tasks with fields for title, description, assigned user, and status.
 * CRUD operations for tasks, including file upload option in task creation.
 
-3. Comments:
-* Relationship between tasks and comments. Each task can have multiple comments.
-* Database structure to store comments with fields for comment content and the user who posted it.
-* CRUD operations for comments, including file upload option.
+3. Export:
+* Export users.
+* Export Tasks
 
 4. User Interface:
 * Simple and intuitive interface for managing tasks and comments.
 * HTML, CSS, and Bootstrap for a responsive and visually appealing interface.
 
+5. Validation:
+* Laravel Form validation is on the user and task creation form.
+* jQuery email validation and form validation.
+
 ### Setup Instructions
 1. Clone the repository:
-`git clone https://github.com/your-username/task-management-system.git`
+`git clone https://github.com/Shruti455/task_system.git`
 
 2. Navigate into the project directory
-`cd task-management-system`
+`cd task_system`
 
 3. Install dependencies
 `composer update` and `npm install`
@@ -35,13 +38,16 @@ This is a simple task management system built using Laravel. It allows users to 
 5. Run database migrations
 `php artisan migrate`
 
-6. Serve the application
+6. Run seeder to create admin credentials
+`php artisan db:seed`
+
+7. Serve the application
 `php artisan serve`
 
-7. Start development server
+8. Start development server
 `npm run dev`
 
-8. Access the application in your web browser at
+9. Access the application in your web browser at
 `http://localhost:8000`
 
 ### Additional Notes
@@ -54,12 +60,10 @@ This is a simple task management system built using Laravel. It allows users to 
 * For any issues or questions, please refer to the Laravel documentation or open an issue in the GitHub repository.
 
 ### Features
-1. Any user can create task.
+1. Admin can create task.
 2. Assign to specific user.
-3. Only task owner can edit or delete task.
-4. Only task owner can assign task to specific user.
-5. Both task creator and assigned user can change status.
-6. User can add an attachment in the task.
-7. Both task creator and assigned user can comment on task.
-8. Comment can be only delete or update by user who comment.
-9. Attachment can be upload in the comment section
+3. Only Admin can edit or delete tasks.
+4. Only Admin can assign task to specific user.
+5. Both admin and assigned user can change status.
+6. Admin can add an attachment in the task.
+7. Admin can export user and tasks details in excel.
